@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;500;700&display=swap');
 @import url('https://use.fontawesome.com/releases/v5.0.7/css/all.css');
 
+$hide: none;
+
 @mixin flex-center {
     display: flex;
     justify-content: center;
@@ -12,6 +14,42 @@
     text-align: center;
     color: white;
 }
+
+@mixin container {
+    flex-direction: column;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 2px solid white;
+    border-radius: 5px;
+    width: 70%;
+    height: auto; //450px;
+    background-color: green;
+    box-shadow: 2px 2px 10px 2px white;
+}
+
+@mixin button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    line-height: 2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    background: green;
+    color: white;
+    border: 2px solid rgba(31, 31, 31, 0.322);
+    border-radius: 50em;
+    padding: .5em 2em;
+    outline: none;
+    cursor: pointer;
+    transition: 0.5s;
+    -webkit-box-shadow: 0em -0.2rem 0em rgba(0, 0, 0, 0.1) inset;
+    -moz-box-shadow: 0em -0.2rem 0em rgba(0, 0, 0, 0.1) inset;
+    box-shadow: 0em -0.2rem 0em rgba(0, 0, 0, 0.1) inset;
+}
+
 
 * {
     margin: 0px;
@@ -42,6 +80,38 @@ header {
         height: 100vh;
         object-fit: cover;
     }
+}
+
+.start-container {
+    @include flex-center;
+    @include container;
+    opacity: 0;
+    animation: fadeIn 1s ease forwards;
+    animation-delay: .5s;
+}
+
+#start-btn {
+    @include button;
+    width: 40%;
+    //height: 10%;
+    margin: 1.5em 0;
+
+    &:hover {
+        background-color: rgb(4, 48, 4);
+        color: white;
+        border: 2px solid white;
+        letter-spacing: .2em;
+    }
+
+    &:active {
+        box-shadow: inset 40px 40px 40px green;
+        filter: blur(10px);
+    }
+}
+
+#quiz,
+#score {
+    display: $hide;
 }
 
 #quiz {
