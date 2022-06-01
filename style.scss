@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;500;700&display=swap');
+@import url('https://use.fontawesome.com/releases/v5.0.7/css/all.css');
+
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin title {
+    font-size: 2em;
+    text-align: center;
+    color: white;
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Oswald', sans-serif;
+}
+
+header {
+    @include title;
+    font-size: 2.2em;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    text-shadow: 3px 4px 0 black;
+}
+
+#start,
+#score {
+    @include flex-center;
+
+    img {
+        width: 100vw;
+        height: 100vh;
+        object-fit: cover;
+    }
+}
+
+#quiz {
+    img {
+        width: 100vw;
+        height: 100vh;
+        object-fit: fill;
+    }
+}
