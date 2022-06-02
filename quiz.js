@@ -8,12 +8,16 @@ const answerBTag = document.getElementById('answerB')
 const answerCTag = document.getElementById('answerC')
 const answerDTag = document.getElementById('answerD')
 
+let questionsIndex = 0; //index questions 
+let indexNumber = 0; // question number
+
 //start quiz//
 startButton.addEventListener('click', startQuiz)
 
 function startQuiz() {
     startPage.style.display = "none"
     quizPage.style.display = "flex"
+    runQuestion();
 }
 
 //questions and answers//
@@ -119,3 +123,11 @@ let questions = [{
     },
 ]
 
+function runQuestion() {
+    let quest = questions[questionsIndex];
+    questionTag.textContent = quest.question;
+    answerATag.innerHTML = "<h4>A.</h4>" + " " + quest.answers[0];
+    answerBTag.innerHTML = "<h4>B.</h4>" + " " + quest.answers[1];
+    answerCTag.innerHTML = "<h4>C.</h4>" + " " + quest.answers[2];
+    answerDTag.innerHTML = "<h4>D.</h4>" + " " + quest.answers[3];
+}
