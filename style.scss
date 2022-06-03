@@ -200,7 +200,13 @@ header {
     }
 }
 
-@media (min-width: 576px) {
+@media screen and (max-width: 480px) {
+    h1 {
+        font-size: 1.5em;
+    }
+}
+
+@media screen and (min-width: 481px) {
     #start {
         .start-container {
             width: 45%;
@@ -223,11 +229,32 @@ header {
             .answer-btn {
                 width: 30vw;
             }
+
+            .next {
+                display: flex;
+                justify-content: flex-end;
+    
+                .next-btn {
+                    @include button;
+                    width: 20%;
+                    padding: .2em;
+                    margin: .2em 0;
+                    border-radius: 10px;
+                    background: steelblue;
+    
+                    &:hover {
+                        background-color: mediumblue;
+                        color: white;
+                        border-color: white;
+                        cursor: pointer;
+                    }
+                }
+            }
         }
     }
 }
 
-@media (min-width: 768px) {
+@media screen and (min-width: 768px) {
     #start {
         .start-container {
             width: 40%;
@@ -244,7 +271,7 @@ header {
     }
 }
 
-@media (min-width: 992px) {
+@media screen and (min-width: 992px) {
     #start {
         .start-container {
             width: 35%;
@@ -272,7 +299,7 @@ header {
     }
 }
 
-@media (min-width: 1200px) {
+@media screen and (min-width: 1200px) {
     #start {
         .start-container {
             width: 25%;

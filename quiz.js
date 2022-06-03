@@ -7,6 +7,7 @@ const answerATag = document.getElementById('answerA')
 const answerBTag = document.getElementById('answerB')
 const answerCTag = document.getElementById('answerC')
 const answerDTag = document.getElementById('answerD')
+const nextQuestion = document.getElementById('nextQuestions')
 
 let questionsIndex = 0; //index questions 
 let indexNumber = 0; // question number
@@ -130,4 +131,19 @@ function runQuestion() {
     answerBTag.innerHTML = "<h4>B.</h4>" + " " + quest.answers[1];
     answerCTag.innerHTML = "<h4>C.</h4>" + " " + quest.answers[2];
     answerDTag.innerHTML = "<h4>D.</h4>" + " " + quest.answers[3];
+}
+
+
+const lastQuestion = questions.length - 1;
+
+// next question
+nextQuestion.addEventListener('click', setNext)
+
+function setNext() {
+    if (questionsIndex < lastQuestion) {
+        questionsIndex++;
+        runQuestion();
+    } else if (questionsIndex === lastQuestion) {
+        nextQuestion.innerHTML = 'Pokaż Wynik';
+    }
 }
