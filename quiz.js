@@ -2,6 +2,7 @@ const startPage = document.getElementById('start')
 const quizPage = document.getElementById('quiz')
 const startButton = document.getElementById('start-btn')
 const questionTag = document.getElementById('question')
+const questionNumber = document.getElementById('currentQuestion')
 const answersContainer = document.getElementById('answers')
 const answerATag = document.getElementById('answerA')
 const answerBTag = document.getElementById('answerB')
@@ -9,7 +10,7 @@ const answerCTag = document.getElementById('answerC')
 const answerDTag = document.getElementById('answerD')
 const nextQuestion = document.getElementById('nextQuestions')
 
-let questionsIndex = 0; //index questions 
+let questionsIndex = 0; // index questions 
 let indexNumber = 0; // question number
 
 //start quiz//
@@ -19,6 +20,22 @@ function startQuiz() {
     startPage.style.display = "none"
     quizPage.style.display = "flex"
     runQuestion();
+    runTime();
+}
+
+//time countdown//
+let counter = 15;
+
+function runTime() {
+    setInterval(() => {
+        counter--;
+        if (counter >= 0) {
+            timeLeft = document.getElementById('timer');
+            timeLeft.innerHTML = counter;
+        } else {
+            disabled(); // score = 0
+        }
+    }, 1500);
 }
 
 //questions and answers//
@@ -126,6 +143,7 @@ let questions = [{
 
 function runQuestion() {
     let quest = questions[questionsIndex];
+    questionNumber.textContent = indexNumber + 1 + " / " + questions.length;     //  question number
     questionTag.textContent = quest.question;
     answerATag.innerHTML = "<h4>A.</h4>" + " " + quest.answers[0];
     answerBTag.innerHTML = "<h4>B.</h4>" + " " + quest.answers[1];
@@ -140,6 +158,8 @@ const lastQuestion = questions.length - 1;
 nextQuestion.addEventListener('click', setNext)
 
 function setNext() {
+    counter = 16; // -- 15 seconds time for each question
+    indexNumber++; // set question number
     if (questionsIndex < lastQuestion) {
         questionsIndex++;
         runQuestion();

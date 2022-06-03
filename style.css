@@ -171,6 +171,22 @@ header {
           transition-delay: .5s;
 }
 
+#quiz .quiz-container .question-number {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  color: white;
+}
+
+#quiz .quiz-container .question-number .time {
+  font-size: 1.4em;
+  font-weight: 700;
+  color: darkblue;
+}
+
 #quiz .quiz-container .top {
   text-align: center;
   font-size: 1.4em;

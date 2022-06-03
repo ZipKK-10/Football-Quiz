@@ -138,6 +138,18 @@ header {
         animation: leftIn .7s ease forwards;
         transition-delay: .5s;
 
+        .question-number {
+            display: flex;
+            justify-content: space-between;
+            color: white;
+
+            .time {
+                font-size: 1.4em;
+                font-weight: 700;
+                color: darkblue;
+            }
+        }
+
         .top {
             text-align: center;
             font-size: 1.4em;
