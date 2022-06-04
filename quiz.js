@@ -158,6 +158,7 @@ const lastQuestion = questions.length - 1;
 nextQuestion.addEventListener('click', setNext)
 
 function setNext() {
+    resetClass(); // reset classes for answers
     counter = 16; // -- 15 seconds time for each question
     indexNumber++; // set question number
     if (questionsIndex < lastQuestion) {
@@ -194,8 +195,18 @@ answersTag.forEach(function (answer) {
         }
 
         disabled(); // another answers are unclickable
+        counter = 0; // pause timer
     })
 })
+
+function resetClass() {
+    for (let i = 0; i < answersLen; i++) {
+        answersContainer.children[i].classList.remove('correct');
+        answersContainer.children[i].classList.remove('wrong');
+        answersContainer.children[i].classList.remove('answered');
+        answersContainer.children[i].classList.remove('transition-time');
+    }
+}
 
 function disabled() {
     for (let i = 0; i < answersLen; i++) {
