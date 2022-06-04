@@ -33,7 +33,7 @@ function runTime() {
             timeLeft = document.getElementById('timer');
             timeLeft.innerHTML = counter;
         } else {
-            disabled(); // score = 0
+            disabled(); 
         }
     }, 1500);
 }
@@ -165,5 +165,40 @@ function setNext() {
         runQuestion();
     } else if (questionsIndex === lastQuestion) {
         nextQuestion.innerHTML = 'Pokaż Wynik';
+    }
+}
+
+let answersTag = document.querySelectorAll('.answer-btn');
+const answersLen = answersContainer.children.length;
+
+// check answers 
+answersTag.forEach(function (answer) {
+    answer.addEventListener('click', function () {
+
+        if (answer === questions[questionsIndex].correct) {
+            answer.classList.add('correct');
+            answer.innerHTML = "dobrze";
+        } else {
+            answer.classList.add('wrong');
+            answer.innerHTML = "źle";
+            showCorrectAnswer();
+        }
+
+        function showCorrectAnswer() {
+            for (let i = 0; i < answersLen; i++) {
+                if (answersContainer.children[i] === questions[questionsIndex].correct) {
+                    answersContainer.children[i].classList.add('correct');
+                    answersContainer.children[i].classList.add('transition-time');
+                }
+            }
+        }
+
+        disabled(); // another answers are unclickable
+    })
+})
+
+function disabled() {
+    for (let i = 0; i < answersLen; i++) {
+        answersContainer.children[i].classList.add('answered');
     }
 }
