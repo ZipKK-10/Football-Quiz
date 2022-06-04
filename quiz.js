@@ -9,9 +9,11 @@ const answerBTag = document.getElementById('answerB')
 const answerCTag = document.getElementById('answerC')
 const answerDTag = document.getElementById('answerD')
 const nextQuestion = document.getElementById('nextQuestions')
+const scorePage = document.getElementById('score')
 
 let questionsIndex = 0; // index questions 
 let indexNumber = 0; // question number
+let score = 0;
 
 //start quiz//
 startButton.addEventListener('click', startQuiz)
@@ -33,7 +35,7 @@ function runTime() {
             timeLeft = document.getElementById('timer');
             timeLeft.innerHTML = counter;
         } else {
-            disabled(); 
+            disabled(); //  score = 0
         }
     }, 1500);
 }
@@ -179,6 +181,8 @@ answersTag.forEach(function (answer) {
         if (answer === questions[questionsIndex].correct) {
             answer.classList.add('correct');
             answer.innerHTML = "dobrze";
+            score++; // add point
+            console.log('correct');
         } else {
             answer.classList.add('wrong');
             answer.innerHTML = "źle";
