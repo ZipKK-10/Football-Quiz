@@ -10,6 +10,9 @@ const answerCTag = document.getElementById('answerC')
 const answerDTag = document.getElementById('answerD')
 const nextQuestion = document.getElementById('nextQuestions')
 const scorePage = document.getElementById('score')
+const scoreResult = document.getElementById('result')
+const scorePercantage = document.getElementById('percentage')
+const homeButton = document.getElementById('home-btn')
 
 let questionsIndex = 0; // index questions 
 let indexNumber = 0; // question number
@@ -167,7 +170,20 @@ function setNext() {
         questionsIndex++;
         runQuestion();
     } else if (questionsIndex === lastQuestion) {
-        nextQuestion.innerHTML = 'Pokaż Wynik';
+        final();
+
+        function final() {
+            quizPage.style.display = "none";
+            scorePage.style.display = "flex";
+            scoreResult.innerHTML = score + "/" + questions.length; // last question + score page
+            scorePercantage.innerHTML = Math.round(100 * score / questions.length) + "%";   // % of result
+            homeButton.addEventListener('click', goHome); // back to homepage
+
+            function goHome() {
+                window.location.reload(true);
+                score = 0;
+            }
+        }
     }
 }
 

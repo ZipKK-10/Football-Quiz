@@ -14,6 +14,7 @@
     <header>
         <h1>Piłkarski Quiz</h1>
     </header>
+
     <main id="start">
         <img src="./img/startPhoto.jpg" alt="Credit: Photo by Guillaume de Germain on Unsplash">
         <section class="start-container">
@@ -44,11 +45,17 @@
         </section>
     </main>
 
-    <section id="score">
+    <main id="score">
         <img src="./img/scorePhoto.jpg" alt="Credit: Photo by Fauzan Saari on Unsplash">
-        <div class="score-container">
-        </div>
-    </section>
+        <section class="score-container">
+            <i class="fas fa-trophy"></i>
+            <h3 class="scoreTitle">Twój wynik:</h3>
+            <div id="result"></div>
+            <div id="percentage"></div>
+            <button id="home-btn"><i class="fa fa-home" aria-hidden="true"></i>Home</button>
+            <div class="copyright">Made by: Krzysztof Kerlin &copy 2022</div>
+        </section>
+    </main>
 
     <script src="quiz.js"></script>
 </body>

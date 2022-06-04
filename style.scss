@@ -23,6 +23,7 @@ $hide: none;
     transform: translate(-50%, -50%);
     border: 2px solid white;
     border-radius: 5px;
+    padding: 2em;
     width: 70%;
     height: auto; //450px;
     background-color: green;
@@ -82,12 +83,14 @@ header {
     }
 }
 
-.start-container {
+.start-container,
+.score-container {
     @include flex-center;
     @include container;
-    opacity: 0;
+    opacity: 0;    
     animation: fadeIn 1s ease forwards;
     animation-delay: .5s;
+    color: white;
 
     h2 {
         @include title;
@@ -95,7 +98,7 @@ header {
 
     .fas {
         color: white;
-        font-size: 1.5em;
+        font-size: 2.5em;
         margin: .5vh;
     }
 }
@@ -103,7 +106,6 @@ header {
 #start-btn {
     @include button;
     width: 40%;
-    //height: 10%;
     margin: 1.5em 0;
 
     &:hover {
@@ -184,7 +186,6 @@ header {
             }
 
             &:hover {
-                //background-color: lighten($color: dodgerblue, $amount: 2);
                 border-color: dodgerblue;
                 cursor: pointer;
             }
@@ -208,6 +209,53 @@ header {
             &:hover {
                 cursor: no-drop;
             }
+        }
+
+        .transition-time {
+            transition-delay: 1s;
+        }
+    }
+}
+
+#score {
+    .score-container {
+        animation-delay: 1.5s;
+
+        .scoreTitle {
+            text-transform: uppercase;
+            font-size: 1.2em;
+            letter-spacing: .2em;
+            margin-top: 1em;
+        }
+
+        #result,
+        #percentage {
+            @include title;
+        }
+
+        #home-btn {
+            @include button;
+            width: 60%;
+            margin: .5em 0;
+            background: transparent;
+            transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
+
+            &:hover,
+            &:focus {
+                box-shadow: 0 0 40px 40px rgb(4, 48, 4) inset;
+                color: white;
+            }
+
+            .fa {
+                padding-right: 5px;
+            }
+        }
+
+        .copyright {
+            color: white;
+            text-align: center;
+            font-size: .7em;
+            margin-bottom: 10px;
         }
     }
 }
@@ -284,6 +332,17 @@ header {
             }
         }
     }
+
+    #score {
+        .score-container {
+
+            #home-btn {
+                width: 40%;
+                font-size: 1em;
+                margin: 1em;
+            }
+        }
+    }
 }
 
 @media screen and (min-width: 768px) {
@@ -307,7 +366,6 @@ header {
     #start {
         .start-container {
             width: 35%;
-
         }
     }
 
@@ -329,6 +387,12 @@ header {
             }
         }
     }
+
+    #score {
+        .score-container {
+            width: 25%;
+        }
+    }
 }
 
 @media screen and (min-width: 1200px) {
@@ -345,6 +409,13 @@ header {
     #quiz {
         .quiz-container {
             width: 50%;
+        }
+    }
+
+    #score {
+
+        h3 {
+            font-size: 1.5em;
         }
     }
 }
