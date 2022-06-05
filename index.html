@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pl">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -12,16 +12,24 @@
 
 <body>
     <header>
-        <h1>Piłkarski Quiz</h1>
+        <h1>Football Quiz</h1>
     </header>
 
     <main id="start">
         <img src="./img/startPhoto.jpg" alt="Credit: Photo by Guillaume de Germain on Unsplash">
+        <nav class="lang">
+            <a href="#" language="default">PL</a>
+        </nav>
         <section class="start-container">
             <h2>Quiz</h2>
             <i class="fas fa-futbol"></i>
+            <article class="rules">
+                <h4 class="rule">20 pytań</h4>
+                <h4 class="rule">15 sekund na odpowiedź</h4>
+                <h4 class="rule">Kliknięcie oznacza wybór odpowiedzi</h4>
+            </article>
             <button id="start-btn">Start</button>
-            </div>
+            <h5 class="rule_2">* Stan na 06. 2022 r.</h5>
         </section>
     </main>
 
@@ -30,7 +38,7 @@
         <section class="quiz-container">
             <div class="question-number">
                 <h3 id="currentQuestion"></h3>
-                <div id="timer" class="time">15</div>
+                <h3 id="timer" class="time">15</h3>
             </div>
             <div id="question" class="top"></div>
             <div id="answers" class="grid">
@@ -40,7 +48,8 @@
                 <div id="answerD" class="answer-btn"></div>
             </div>
             <div class="next">
-                <button id="nextQuestions" class="next-btn">NEXT</button>
+                <button id="nextQuestions" class="next-btn"><i class="fa fa-arrow-right" aria-hidden="true"></i>
+                </button>
             </div>
         </section>
     </main>

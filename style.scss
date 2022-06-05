@@ -64,7 +64,6 @@ body {
 
 header {
     @include title;
-    font-size: 2.2em;
     position: absolute;
     top: 0;
     left: 50%;
@@ -80,6 +79,21 @@ header {
         width: 100vw;
         height: 100vh;
         object-fit: cover;
+    }
+}
+
+.lang {
+    position: absolute;
+    right: 5%;
+    top: 5%;
+
+    a {
+        @include title;
+        font-size: .7em;
+        text-decoration: none;
+        background-color: darkgreen;
+        border: 2px solid white;
+        padding: .2em;
     }
 }
 
@@ -105,7 +119,7 @@ header {
 
 #start-btn {
     @include button;
-    width: 40%;
+    width: 50%;
     margin: 1.5em 0;
 
     &:hover {
@@ -119,6 +133,13 @@ header {
         box-shadow: inset 40px 40px 40px green;
         filter: blur(10px);
     }
+}
+
+.rules {
+    @include flex-center;
+    flex-direction: column;
+    text-align: center;
+    padding: 1em;
 }
 
 #quiz,
@@ -146,7 +167,7 @@ header {
             color: white;
 
             .time {
-                font-size: 1.4em;
+                font-size: 1.3em;
                 font-weight: 700;
                 color: darkblue;
             }
@@ -170,7 +191,7 @@ header {
         }
 
         .answer-btn {
-            font-size: .8em;
+            font-size: .7em;
             border: 2px solid white;
             background-color: white;
             width: 70vw;
@@ -213,6 +234,27 @@ header {
 
         .transition-time {
             transition-delay: 1s;
+        }
+
+        .next {
+            display: flex;
+            justify-content: flex-end;
+
+            .next-btn {
+                @include button;
+                width: 15%;
+                padding: .5em;
+                margin: .2em 0;
+                border-radius: 10px;
+                background: steelblue;
+
+                &:hover {
+                    background-color: mediumblue;
+                    color: white;
+                    border-color: white;
+                    cursor: pointer;
+                }
+            }
         }
     }
 }
@@ -280,20 +322,10 @@ header {
     }
 }
 
-@media screen and (max-width: 480px) {
-    h1 {
-        font-size: 1.5em;
-    }
-}
-
 @media screen and (min-width: 481px) {
     #start {
         .start-container {
-            width: 45%;
-
-            #start-btn {
-                width: 45%;
-            }
+            width: 55%;
         }
     }
 
@@ -308,27 +340,6 @@ header {
 
             .answer-btn {
                 width: 30vw;
-            }
-
-            .next {
-                display: flex;
-                justify-content: flex-end;
-    
-                .next-btn {
-                    @include button;
-                    width: 20%;
-                    padding: .2em;
-                    margin: .2em 0;
-                    border-radius: 10px;
-                    background: steelblue;
-    
-                    &:hover {
-                        background-color: mediumblue;
-                        color: white;
-                        border-color: white;
-                        cursor: pointer;
-                    }
-                }
             }
         }
     }
@@ -366,6 +377,10 @@ header {
     #start {
         .start-container {
             width: 35%;
+
+            #start-btn {
+                width: 45%;
+            }
         }
     }
 
@@ -413,7 +428,6 @@ header {
     }
 
     #score {
-
         h3 {
             font-size: 1.5em;
         }

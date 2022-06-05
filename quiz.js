@@ -135,7 +135,7 @@ let questions = [{
         correct: answerA,
     },
     {
-        question: "Kto nie będzie współgospodarzem EURO 2021?",
+        question: "Kto nie był współgospodarzem EURO 2021?",
         answers: ["Szkocja", "Belgia", "Rosja", "Dania"],
         correct: answerB,
     },
@@ -155,7 +155,6 @@ function runQuestion() {
     answerCTag.innerHTML = "<h4>C.</h4>" + " " + quest.answers[2];
     answerDTag.innerHTML = "<h4>D.</h4>" + " " + quest.answers[3];
 }
-
 
 const lastQuestion = questions.length - 1;
 
@@ -193,7 +192,6 @@ const answersLen = answersContainer.children.length;
 // check answers 
 answersTag.forEach(function (answer) {
     answer.addEventListener('click', function () {
-
         if (answer === questions[questionsIndex].correct) {
             answer.classList.add('correct');
             answer.innerHTML = "dobrze";
