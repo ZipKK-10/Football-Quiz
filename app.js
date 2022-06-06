@@ -12,4 +12,14 @@ app.get('', (req, res) => {
    res.sendFile(__dirname + '/index.html')
 })
 
+app.get('/', (req, res, next) => {
+   fs.readFile('/file-does-not-exist', (err, data) => {
+     if (err) {
+       next(err) // Pass errors to Express.
+     } else {
+       res.send(data)
+     }
+   })
+ })
+
 app.listen(port, () => console.info(`Server Football Quiz listening on port ${port}`))
