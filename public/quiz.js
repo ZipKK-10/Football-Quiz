@@ -163,7 +163,7 @@ nextQuestion.addEventListener('click', setNext)
 
 function setNext() {
     resetClass(); // reset classes for answers
-    counter = 16; // -- 15 seconds time for each question
+    counter = 15; // time value for each question
     indexNumber++; // set question number
     if (questionsIndex < lastQuestion) {
         questionsIndex++;
@@ -194,12 +194,12 @@ answersTag.forEach(function (answer) {
     answer.addEventListener('click', function () {
         if (answer === questions[questionsIndex].correct) {
             answer.classList.add('correct');
-            answer.innerHTML = "dobrze";
+            answer.innerHTML = "+1";
             score++; // add point
             console.log('correct');
         } else {
             answer.classList.add('wrong');
-            answer.innerHTML = "źle";
+            answer.innerHTML = ":(";
             showCorrectAnswer();
         }
 

@@ -94,6 +94,7 @@ header {
         background-color: darkgreen;
         border: 2px solid white;
         padding: .2em;
+        cursor: no-drop;
     }
 }
 
@@ -323,10 +324,8 @@ header {
 }
 
 @media screen and (min-width: 481px) {
-    #start {
-        .start-container {
-            width: 55%;
-        }
+    .start-container {
+        width: 55%;
     }
 
     #quiz {
@@ -344,15 +343,10 @@ header {
         }
     }
 
-    #score {
-        .score-container {
-
-            #home-btn {
-                width: 40%;
-                font-size: 1em;
-                margin: 1em;
-            }
-        }
+    #home-btn {
+        width: 50%;
+        font-size: 1em;
+        margin: 1em;
     }
 }
 
@@ -403,10 +397,8 @@ header {
         }
     }
 
-    #score {
-        .score-container {
-            width: 25%;
-        }
+    .score-container {
+        width: 25%;
     }
 }
 

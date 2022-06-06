@@ -59,6 +59,7 @@ header {
   background-color: darkgreen;
   border: 2px solid white;
   padding: .2em;
+  cursor: no-drop;
 }
 
 .start-container,
@@ -449,7 +450,7 @@ header {
 }
 
 @media screen and (min-width: 481px) {
-  #start .start-container {
+  .start-container {
     width: 55%;
   }
   #quiz .quiz-container {
@@ -463,8 +464,8 @@ header {
   #quiz .quiz-container .answer-btn {
     width: 30vw;
   }
-  #score .score-container #home-btn {
-    width: 40%;
+  #home-btn {
+    width: 50%;
     font-size: 1em;
     margin: 1em;
   }
@@ -503,7 +504,7 @@ header {
   #quiz .quiz-container .answer-btn {
     width: 20vw;
   }
-  #score .score-container {
+  .score-container {
     width: 25%;
   }
 }
