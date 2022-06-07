@@ -22,4 +22,4 @@ app.get('/', (req, res, next) => {
    })
  })
 
-app.listen(port, () => console.info(`Server Football Quiz listening on port ${port}`))
+app.listen(process.env.PORT || port, () => console.info(`Server Football Quiz listening on port ${port}`))
