@@ -14,14 +14,15 @@ Po udzieleniu błędnej odpowiedzi wyświetla się poprawna odpowiedź <br />
 **Instalacja:** <br />
 Node  v16.15.0 
 Npm 8.11.0 <br />
-npm install express ejs <br />
+npm install express <br />
 npm install nodemon --save-dev <br />
-package.json -> "start": "nodemon app.js" <br />
+package.json -> "start": "node app.js" <br />
 Start -> node app.js <br />
 style.css, js and img w folderze /public <br />
 Testy (Cypress): <br />
 cd tests ->
 npm install cypress <br />
-npm run cypress:open <br />
+package.json -> "cypress:open": "cypress open"
+Start -> npm run cypress:open <br />
 test w folderze integration <br />
 <img src="public/img/technologies.png">
